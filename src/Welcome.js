@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 
 class Welcome extends Component{
     constructor(){
@@ -21,5 +22,23 @@ class Welcome extends Component{
         )
     }
 }
+
+Welcome.propTypes={
+    title:PropTypes.string.isRequired,
+    year:PropTypes.number,
+    password(props, propName, component){
+        if(!(propName in props)){
+          return new Error(`missing ${propName}`)
+        }
+        if(props[propName].length < 6){
+          return new Error(`${propName} was too short`)
+        }
+      }
+}
+
+Welcome.defaultProps={
+    year:2030
+}
+
 
 export default Welcome;
