@@ -4,6 +4,7 @@ import './App.css';
 import Welcome from './Welcome'
 import Counter from './Counter'
 import Friends from './Friends'
+import Todos from './Todos'
 
 class App extends React.Component {
   render(){
@@ -13,7 +14,7 @@ class App extends React.Component {
           <Welcome title="Batch 29" password="123456"/>
           <Welcome title="Varma" year={2019} password="123456"/>
         </header>
-        <Friends/>
+        <Todos/>
       </div>
     );
   }
